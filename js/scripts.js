@@ -10,14 +10,12 @@ $(document).ready(function() {
 
     var newTodo = new Todo(inputtedTodo);
 
-    $("#todo-list").append("<span class='whole-thing'><li><span class='todo'>" + newTodo.task + "</span></li>" + "<input type='checkbox' id='" + newTodo.task  + "' value='done'>" + "<label for='" + newTodo.task + "'>Done</label></span><span class='remove'>REMOVE</span>");
-
-    $(".remove").click(function(event) {
-      event.preventDefault();
-
-      $(".whole-thing").remove();
-      this.remove();
-    })
+    $("#todo-list").append("<div><input type='checkbox' name='task' value=' class='task'" + newTodo.task + "'>" + newTodo.task + "</div");
 
   });
+
+  $("#remove").click(function() {
+    event.preventDefault();
+    $("input:checked").parent().remove();
+    });
 });
